@@ -119,7 +119,6 @@ if __name__ == '__main__':
     num_generated = 0
     try:
         # Get the reference audio filepath
-        print('1')
         in_fpath = '/content/sample_data/audio_file.mp3'
 
         ## Computing the embedding
@@ -129,12 +128,9 @@ if __name__ == '__main__':
         # The following two methods are equivalent:
         # - Directly load from the filepath:
         preprocessed_wav = encoder.preprocess_wav(in_fpath)
-        print('2')
         # - If the wav is already loaded:
         original_wav, sampling_rate = librosa.load(str(in_fpath))
-        print('3')
         preprocessed_wav = encoder.preprocess_wav(original_wav, sampling_rate)
-        print('4')
         print("Loaded file succesfully")
 
         # Then we derive the embedding. There are many functions and parameters that the
@@ -183,20 +179,8 @@ if __name__ == '__main__':
         # Trim excess silences to compensate for gaps in spectrograms (issue #53)
         generated_wav = encoder.preprocess_wav(generated_wav)
 
-        # Play the audio (non-blocking)
-        if not args.no_sound:
-            import sounddevice as sd
-            try:
-                sd.stop()
-                sd.play(generated_wav, synthesizer.sample_rate)
-            except sd.PortAudioError as e:
-                print("\nCaught exception: %s" % repr(e))
-                print("Continuing without audio playback. Suppress this message with the \"--no_sound\" flag.\n")
-            except:
-                raise
-
         # Save it on the disk
-        filename = "demo_output_%02d.wav" % num_generated
+        filename = "/content/DL-Final-Project/Real-Time-Voice-Cloning-master/demo_output.wav" 
         print(generated_wav.dtype)
         sf.write(filename, generated_wav.astype(np.float32), synthesizer.sample_rate)
         num_generated += 1
