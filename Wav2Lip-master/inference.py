@@ -158,7 +158,6 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print('Using {} for inference.'.format(device))
 
 def _load(checkpoint_path):
-	checkpoint_path = '/content/DL-Final-Project/Wav2Lip-master/checkpoints/wav2lip_gan.pth'
 	if device == 'cuda':
 		checkpoint = torch.load(checkpoint_path)
 	else:
@@ -217,11 +216,10 @@ def main():
 
 	if not args.audio.endswith('.wav'):
 		print('Extracting raw audio...')
-		current_dir = os.path.dirname(os.path.abspath(__file__))
-		total_path = os.path.join(current_dir,'temp/temp.wav')
-		command = 'ffmpeg -y -i {} -strict -2 {}'.format(args.audio, total_path)
+		command = 'ffmpeg -y -i {} -strict -2 {}'.format(args.audio, 'temp/temp.wav')
+
 		subprocess.call(command, shell=True)
-		args.audio = total_path
+		args.audio = 'temp/temp.wav'
 
 	wav = audio.load_wav(args.audio, 16000)
 	mel = audio.melspectrogram(wav)
@@ -251,8 +249,7 @@ def main():
 	for i, (img_batch, mel_batch, frames, coords) in enumerate(tqdm(gen, 
 											total=int(np.ceil(float(len(mel_chunks))/batch_size)))):
 		if i == 0:
-			checkpoint_path = '/content/DL-Final-Project/Wav2Lip-master/checkpoints/wav2lip_gan.pth'
-			model = load_model(checkpoint_path)
+			model = load_model(args.checkpoint_path)
 			print ("Model loaded")
 
 			frame_h, frame_w = full_frames[0].shape[:-1]
