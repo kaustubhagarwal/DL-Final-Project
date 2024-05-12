@@ -42,8 +42,6 @@ if __name__ == '__main__':
     if arg_dict.pop("cpu"):
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-    print("Running a test of your configuration...\n")
-
     if torch.cuda.is_available():
         device_id = torch.cuda.current_device()
         gpu_properties = torch.cuda.get_device_properties(device_id)
