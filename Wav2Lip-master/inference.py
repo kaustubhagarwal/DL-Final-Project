@@ -217,7 +217,7 @@ def main():
 	if not args.audio.endswith('.wav'):
 		print('Extracting raw audio...')
 		current_dir = os.path.dirname(os.path.abspath(__file__))
-		temp_path = os.path,join(current_dir, 'temp/temp.wav')
+		temp_path = os.path.join(current_dir, 'temp/temp.wav')
 		command = 'ffmpeg -y -i {} -strict -2 {}'.format(args.audio, temp_path)
 
 		subprocess.call(command, shell=True)
