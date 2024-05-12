@@ -15,7 +15,7 @@ v. Install the remaining requirements with `pip install -r requirements.txt`
 
 ### 2. Training Models
 #### i) Encoder
-You can run encoder_train.py with the following optional parameters
+You can run encoder_train.py with the following parameters
 - run_id (required): This is a string argument that the user must provide. It specifies a name for the current training run. This name is used for several purposes:
     - Identifies the training run for logging and organization.
     - Determines the directory where training outputs are stored (e.g., saved models).
@@ -31,7 +31,7 @@ vis_every (optional): This argument (type int) controls how often (number of ste
 - no_visdom (optional): This argument is a flag (type bool). When set to True, it disables using Visdom for visualization altogether.
 
 #### ii) Vocoder
-You can run vocoder_train.py with the following optional parameters
+You can run vocoder_train.py with the following parameters
 - run_id (required): This is a string argument that the user must provide. It specifies a name for the current training run. This name is used for several purposes, similar to the previous snippet:
     - Identifies the training run for logging and organization.
     - Determines the directory where training outputs are stored (e.g., saved models).
@@ -46,7 +46,7 @@ You can run vocoder_train.py with the following optional parameters
 - f (same as previous snippet): This argument is a flag (type bool). When set to True, it instructs the script to not load any previously saved model state and start training from scratch, even if a model with the same run_id exists.
 
 #### iii) Synthesizer
-You can run synthesizer_train.py with the following optional parameters
+You can run synthesizer_train.py with the following parameters
 - run_id (required): This argument (type str) is the same as before. It specifies a name for the current training run, used for organization, output storage, and potentially resuming training.
 - syn_dir (required): This argument (type Path) differs from the previous snippets. Here, it's a required argument that specifies the path to the synthesizer directory. This directory is expected to contain the ground truth data for training, such as mel spectrograms, audio waveforms (wavs), and embeddings.
 - m (same as previous snippet): This argument (type Path) allows specifying the root directory for storing all trained models. By default, it's set to "saved_models". A subdirectory named after run_id will be created within this directory to store the specific model weights and logs.
@@ -64,14 +64,12 @@ Before you download any dataset, you can begin by testing your configuration wit
 
 If all tests pass, you're good to go.
 
-### 4. (Optional) Download Datasets
-For playing with the toolbox alone, I only recommend downloading [`LibriSpeech/train-clean-100`](https://www.openslr.org/resources/12/train-clean-100.tar.gz). Extract the contents as `<datasets_root>/LibriSpeech/train-clean-100` where `<datasets_root>` is a directory of your choosing. Other datasets are supported in the toolbox, see [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Training#datasets). You're free not to download any dataset, but then you will need your own data as audio files or you will have to record it with the toolbox.
-
-### 5. Launch the Toolbox
-You can then try the toolbox:
-
-`python demo_toolbox.py -d <datasets_root>`  
-or  
-`python demo_toolbox.py`  
-
-depending on whether you downloaded any datasets. If you are running an X-server or if you have the error `Aborted (core dumped)`, see [this issue](https://github.com/CorentinJ/Real-Time-Voice-Cloning/issues/11#issuecomment-504733590).
+### 4. Running Inference
+Inferencing can be done by running demo_cli.py and passing the following parameters
+- e, --enc_model_fpath (optional): This argument (type Path) specifies the path to a pre-trained encoder model file (default: /content/DL-Final-Project/VoiceCloning/saved_models/default/encoder.pt). The encoder is likely part of a larger model used for processing text.
+- s, --syn_model_fpath (optional): This argument (type Path) specifies the path to a pre-trained synthesizer model file (default: /content/DL-Final-Project/VoiceCloning/saved_models/default/synthesizer.pt). The synthesizer likely generates audio (speech) based on the encoded text.
+- v, --voc_model_fpath (optional): This argument (type Path) specifies the path to a pre-trained vocoder model file (default: /content/DL-Final-Project/VoiceCloning/saved_models/default/vocoder.pt). The vocoder might further process the synthesizer's output to improve the audio quality.
+- cpu (optional): This argument is a flag (type bool). When set to True, it forces the script to use the CPU for processing, even if a GPU is available.
+- no_sound (optional): This argument is a flag (type bool). When set to True, it prevents the script from playing the generated audio after processing.
+- seed (optional): This argument (type int) allows specifying an optional random seed value. Setting a seed makes the script's behavior deterministic (same results for the same inputs), which can be helpful for debugging or reproducibility.
+- text (optional): This argument (type str) provides the text to be processed by the models. By default, it's set to "This is a deep learning sample".
