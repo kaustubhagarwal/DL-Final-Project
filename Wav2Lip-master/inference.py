@@ -252,7 +252,7 @@ def main():
 											total=int(np.ceil(float(len(mel_chunks))/batch_size)))):
 		if i == 0:
 			checkpoint_path = '/content/DL-Final-Project/Wav2Lip-master/checkpoints/wav2lip_gan.pth'
-			model = load_model(args.checkpoint_path)
+			model = load_model(checkpoint_path)
 			print ("Model loaded")
 
 			frame_h, frame_w = full_frames[0].shape[:-1]
