@@ -37,7 +37,6 @@ if __name__ == '__main__':
     parser.add_argument("--text", default='This is a deep learning sample')
     args = parser.parse_args()
     arg_dict = vars(args)
-    print_args(args, parser)
 
     # Hide GPUs from Pytorch to force CPU processing
     if arg_dict.pop("cpu"):
@@ -57,8 +56,6 @@ if __name__ == '__main__':
             gpu_properties.major,
             gpu_properties.minor,
             gpu_properties.total_memory / 1e9))
-    else:
-        print("Using CPU for inference.\n")
 
     ## Load the models one by one.
     print("Preparing the encoder, the synthesizer and the vocoder...")
@@ -68,7 +65,6 @@ if __name__ == '__main__':
 
 
     ## Run a test
-    print("Testing your configuration with small inputs.")
     # Forward an audio waveform of zeroes that lasts 1 second. Notice how we can get the encoder's
     # sampling rate, which may differ.
     # If you're unfamiliar with digital audio, know that it is encoded as an array of floats
@@ -76,7 +72,6 @@ if __name__ == '__main__':
     # The sampling rate is the number of values (samples) recorded per second, it is set to
     # 16000 for the encoder. Creating an array of length <sampling_rate> will always correspond
     # to an audio of 1 second.
-    print("\tTesting the encoder...")
     encoder.embed_utterance(np.zeros(encoder.sampling_rate))
 
     # Create a dummy embedding. You would normally use the embedding that encoder.embed_utterance
@@ -90,7 +85,6 @@ if __name__ == '__main__':
     # illustrate that
     embeds = [embed, np.zeros(speaker_embedding_size)]
     texts = ["test 1", "test 2"]
-    print("\tTesting the synthesizer... (loading the model will output a lot of text)")
     mels = synthesizer.synthesize_spectrograms(texts, embeds)
 
     # The vocoder synthesizes one waveform at a time, but it's more efficient for long ones. We
@@ -99,7 +93,6 @@ if __name__ == '__main__':
     # The vocoder can take a callback function to display the generation. More on that later. For
     # now we'll simply hide it like this:
     no_action = lambda *args: None
-    print("\tTesting the vocoder...")
     # For the sake of making this test short, we'll pass a short target length. The target length
     # is the length of the wav segments that are processed in parallel. E.g. for audio sampled
     # at 16000 Hertz, a target length of 8000 means that the target audio will be cut in chunks of
@@ -107,14 +100,6 @@ if __name__ == '__main__':
     # that has a detrimental effect on the quality of the audio. The default parameters are
     # recommended in general.
     vocoder.infer_waveform(mel, target=200, overlap=50, progress_callback=no_action)
-
-    print("All test passed! You can now synthesize speech.\n\n")
-
-
-    ## Interactive speech generation
-    print("This is a GUI-less example of interface to SV2TTS. The purpose of this script is to "
-          "show how you can interface this project easily with your own. See the source code for "
-          "an explanation of what is happening.\n")
 
     print("Interactive generation loop")
     num_generated = 0
