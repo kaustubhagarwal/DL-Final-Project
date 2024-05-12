@@ -120,9 +120,7 @@ if __name__ == '__main__':
     while True:
         try:
             # Get the reference audio filepath
-            message = "Reference voice: enter an audio filepath of a voice to be cloned (mp3, " \
-                      "wav, m4a, flac, ...):\n"
-            in_fpath = Path(input(message).replace("\"", "").replace("\'", ""))
+            in_fpath = '/content/sample_data/audio_file.mp3'
 
             ## Computing the embedding
             # First, we load the wav using the function that the speaker encoder provides. This is
@@ -144,7 +142,7 @@ if __name__ == '__main__':
 
 
             ## Generating the spectrogram
-            text = input("Write a sentence (+-20 words) to be synthesized:\n")
+            text = 'Hey there, this is Elon Musk'
 
             # If seed is specified, reset torch seed and force synthesizer reload
             if args.seed is not None:
