@@ -61,7 +61,6 @@ if __name__ == '__main__':
 
     ## Load the models one by one.
     print("Preparing the encoder, the synthesizer and the vocoder...")
-    ensure_default_models(Path("saved_models"))
     encoder.load_model(args.enc_model_fpath)
     synthesizer = Synthesizer(args.syn_model_fpath)
     vocoder.load_model(args.voc_model_fpath)
