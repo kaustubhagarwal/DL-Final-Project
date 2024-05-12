@@ -17,9 +17,9 @@ v. Install the remaining requirements with `pip install -r requirements.txt`
 #### i) Encoder
 You can run encoder_train.py with the following optional parameters
 - run_id (required): This is a string argument that the user must provide. It specifies a name for the current training run. This name is used for several purposes:
-    Identifies the training run for logging and organization.
-    Determines the directory where training outputs are stored (e.g., saved models).
-    Allows resuming training from a previously saved state with the same run_id (unless --force_restart is used).
+    - Identifies the training run for logging and organization.
+    - Determines the directory where training outputs are stored (e.g., saved models).
+    - Allows resuming training from a previously saved state with the same run_id (unless --force_restart is used).
 - clean_data_root (required): This argument (type Path) specifies the directory containing preprocessed data for training the encoder part of the model.
 - models_dir (optional): This argument (type Path) allows specifying the root directory for storing all trained models. By default, it's set to "saved_models". A subdirectory named after run_id will be created within this directory to store the specific model weights, backups, and plots generated during training.
 vis_every (optional): This argument (type int) controls how often (number of steps) the training script updates and displays plots related to the loss function. The default value is 10 steps.
