@@ -44,7 +44,7 @@ vis_every (optional): This argument (type int) controls how often (number of ste
 - b (same as previous snippet): This argument (type int) controls how often (number of steps) the script creates backups of the saved model state. Setting it to 0 disables backups. The default value is 25000 steps.
 - f (same as previous snippet): This argument is a flag (type bool). When set to True, it instructs the script to not load any previously saved model state and start training from scratch, even if a model with the same run_id exists.
 
-Pretrained models are now downloaded automatically. If this doesn't work for you, you can manually download them [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models).
+Pretrained models are now downloaded automatically. If this doesn't work for you, you can manually download them [here](https://drive.google.com/drive/folders/1gepTaAwryRh7FjCKuIF3hCT0WpH7f1_z?usp=sharing).
 
 ### 3. (Optional) Test Configuration
 Before you download any dataset, you can begin by testing your configuration with:
