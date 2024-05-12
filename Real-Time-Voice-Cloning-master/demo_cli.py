@@ -119,6 +119,7 @@ if __name__ == '__main__':
     num_generated = 0
     try:
         # Get the reference audio filepath
+        print('1')
         in_fpath = '/content/sample_data/audio_file.mp3'
 
         ## Computing the embedding
@@ -128,9 +129,12 @@ if __name__ == '__main__':
         # The following two methods are equivalent:
         # - Directly load from the filepath:
         preprocessed_wav = encoder.preprocess_wav(in_fpath)
+        print('2')
         # - If the wav is already loaded:
         original_wav, sampling_rate = librosa.load(str(in_fpath))
+        print('3')
         preprocessed_wav = encoder.preprocess_wav(original_wav, sampling_rate)
+        print('4')
         print("Loaded file succesfully")
 
         # Then we derive the embedding. There are many functions and parameters that the
