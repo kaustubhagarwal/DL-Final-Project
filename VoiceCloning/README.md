@@ -31,6 +31,7 @@ vis_every (optional): This argument (type int) controls how often (number of ste
 - no_visdom (optional): This argument is a flag (type bool). When set to True, it disables using Visdom for visualization altogether.
 
 #### ii) Vocoder
+You can run vocoder_train.py with the following optional parameters
 - run_id (required): This is a string argument that the user must provide. It specifies a name for the current training run. This name is used for several purposes, similar to the previous snippet:
     - Identifies the training run for logging and organization.
     - Determines the directory where training outputs are stored (e.g., saved models).
@@ -43,6 +44,16 @@ vis_every (optional): This argument (type int) controls how often (number of ste
 - s (same as previous snippet): This argument (type int) controls how often (number of steps) the script saves the current model state. Setting it to 0 disables saving the model during training. The default value is 1000 steps.
 - b (same as previous snippet): This argument (type int) controls how often (number of steps) the script creates backups of the saved model state. Setting it to 0 disables backups. The default value is 25000 steps.
 - f (same as previous snippet): This argument is a flag (type bool). When set to True, it instructs the script to not load any previously saved model state and start training from scratch, even if a model with the same run_id exists.
+
+#### iii) Synthesizer
+You can run synthesizer_train.py with the following optional parameters
+- run_id (required): This argument (type str) is the same as before. It specifies a name for the current training run, used for organization, output storage, and potentially resuming training.
+- syn_dir (required): This argument (type Path) differs from the previous snippets. Here, it's a required argument that specifies the path to the synthesizer directory. This directory is expected to contain the ground truth data for training, such as mel spectrograms, audio waveforms (wavs), and embeddings.
+- m (same as previous snippet): This argument (type Path) allows specifying the root directory for storing all trained models. By default, it's set to "saved_models". A subdirectory named after run_id will be created within this directory to store the specific model weights and logs.
+- s (same as previous snippet): This argument (type int) controls how often (number of steps) the script saves the current model state. Setting it to 0 disables saving the model during training. The default value is 1000 steps.
+- b (same as previous snippet): This argument (type int) controls how often (number of steps) the script creates backups of the saved model state. Setting it to 0 disables backups. The default value is 25000 steps.
+- f (same as previous snippet): This argument is a flag (type bool). When set to True, it instructs the script to not load any previously saved model state and start training from scratch, even if a model with the same run_id exists.
+- hparams (optional): This argument (type str) allows specifying hyperparameter overrides for the training process. Hyperparameters are settings that control the training behavior but are not part of the model itself. This argument takes a comma-separated list of "name=value" pairs, allowing you to adjust specific hyperparameters without modifying the main training script. The default value is an empty string, meaning no overrides are applied.
 
 Pretrained models are now downloaded automatically. If this doesn't work for you, you can manually download them [here](https://drive.google.com/drive/folders/1gepTaAwryRh7FjCKuIF3hCT0WpH7f1_z?usp=sharing).
 
