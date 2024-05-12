@@ -163,7 +163,7 @@ if __name__ == '__main__':
         generated_wav = encoder.preprocess_wav(generated_wav)
 
         # Save it on the disk
-        filename = "/content/DL-Final-Project/Real-Time-Voice-Cloning-master/demo_output.wav" 
+        filename = "/content/audio_output.wav" 
         print(generated_wav.dtype)
         sf.write(filename, generated_wav.astype(np.float32), synthesizer.sample_rate)
         num_generated += 1
