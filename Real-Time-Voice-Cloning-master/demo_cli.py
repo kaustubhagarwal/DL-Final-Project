@@ -101,7 +101,6 @@ if __name__ == '__main__':
     # recommended in general.
     vocoder.infer_waveform(mel, target=200, overlap=50, progress_callback=no_action)
 
-    print("Interactive generation loop")
     num_generated = 0
     try:
         # Get the reference audio filepath
