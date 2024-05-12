@@ -158,8 +158,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print('Using {} for inference.'.format(device))
 
 def _load(checkpoint_path):
-	current_dir = os.path.dirname(os.path.abspath(__file__))
-	checkpoint_path = os.path.join(checkpoint_path, 'checkpoints/wav2lip_gan.pth')
+	checkpoint_path = '/content/DL-Final-Project/Wav2Lip-master/checkpoints/wav2lip_gan.pth'
 	if device == 'cuda':
 		checkpoint = torch.load(checkpoint_path)
 	else:
