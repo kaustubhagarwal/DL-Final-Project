@@ -252,6 +252,7 @@ def main():
 	for i, (img_batch, mel_batch, frames, coords) in enumerate(tqdm(gen, 
 											total=int(np.ceil(float(len(mel_chunks))/batch_size)))):
 		if i == 0:
+			checkpoint_path = '/content/DL-Final-Project/Wav2Lip-master/checkpoints/wav2lip_gan.pth'
 			model = load_model(args.checkpoint_path)
 			print ("Model loaded")
 
