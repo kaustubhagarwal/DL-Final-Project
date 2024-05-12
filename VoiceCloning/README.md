@@ -13,7 +13,7 @@ iii. Install [ffmpeg](https://ffmpeg.org/download.html#get-packages). This is ne
 iv. Install [PyTorch](https://pytorch.org/get-started/locally/). Pick the latest stable version, your operating system, your package manager (pip by default) and finally pick any of the proposed CUDA versions if you have a GPU, otherwise pick CPU. Run the given command.
 v. Install the remaining requirements with `pip install -r requirements.txt`
 
-### 2. Training Models
+### 2. Training Models (Optional)
 #### i) Encoder
 You can run encoder_train.py with the following parameters
 - run_id (required): This is a string argument that the user must provide. It specifies a name for the current training run. This name is used for several purposes:
@@ -57,14 +57,7 @@ You can run synthesizer_train.py with the following parameters
 
 Pretrained models are now downloaded automatically. If this doesn't work for you, you can manually download them [here](https://drive.google.com/drive/folders/1gepTaAwryRh7FjCKuIF3hCT0WpH7f1_z?usp=sharing).
 
-### 3. (Optional) Test Configuration
-Before you download any dataset, you can begin by testing your configuration with:
-
-`python demo_cli.py`
-
-If all tests pass, you're good to go.
-
-### 4. Running Inference
+### 3. Running Inference
 Inferencing can be done by running demo_cli.py and passing the following parameters
 - e, --enc_model_fpath (optional): This argument (type Path) specifies the path to a pre-trained encoder model file (default: /content/DL-Final-Project/VoiceCloning/saved_models/default/encoder.pt). The encoder is likely part of a larger model used for processing text.
 - s, --syn_model_fpath (optional): This argument (type Path) specifies the path to a pre-trained synthesizer model file (default: /content/DL-Final-Project/VoiceCloning/saved_models/default/synthesizer.pt). The synthesizer likely generates audio (speech) based on the encoded text.
