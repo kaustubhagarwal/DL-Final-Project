@@ -34,7 +34,7 @@ if __name__ == '__main__':
         "If True, audio won't be played.")
     parser.add_argument("--seed", type=int, default=None, help=\
         "Optional random number seed value to make toolbox deterministic.")
-    parser.add_argument("--text", default='This is a deep learning sample)
+    parser.add_argument("--text", default='This is a deep learning sample')
     args = parser.parse_args()
     arg_dict = vars(args)
     print_args(args, parser)
