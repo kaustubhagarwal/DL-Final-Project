@@ -1,8 +1,8 @@
 # Voice Cloning Module
-This repository is an implementation of [Transfer Learning from Speaker Verification to
+We have created code for this voice cloning module based on the paper [Transfer Learning from Speaker Verification to
 Multispeaker Text-To-Speech Synthesis](https://arxiv.org/pdf/1806.04558.pdf) (SV2TTS).
 
-SV2TTS is a deep learning framework in three stages. In the first stage, one creates a digital representation of a voice from a few seconds of audio. In the second and third stages, this representation is used as reference to generate speech given arbitrary text.
+The deep learning framework proposed in the paper consists of three stages. In the first stage, one creates a digital representation of a voice from a few seconds of audio. In the second and third stages, this representation is used as reference to generate speech given arbitrary text.
 
 The model architecture for this voice cloning module is as follows (based on the work done by Jia et. al, 2019)
 ![Model Architecture](Model_architecture.jpeg)
