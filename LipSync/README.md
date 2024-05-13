@@ -2,6 +2,8 @@
 
 This code is inspired by the work of [A Lip Sync Expert Is All You Need for Speech to Lip Generation In the Wild](http://arxiv.org/abs/2008.10010)
 
+The key to this module's success is that it learns from a powerful "lip-sync discriminator" that can tell how good a lip sync is. This discriminator helps the generator model avoid the mistakes of previous methods, which had trouble with lip syncing on unseen people or moving videos.
+
 ## Prerequisites
 Install necessary packages using `pip install -r requirements.txt`.
 
