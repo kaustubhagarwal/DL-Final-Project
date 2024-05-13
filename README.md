@@ -37,7 +37,7 @@ You can find more details about each of the modules, their working and some plot
 
 We have generated some samples to show the performance of our model. These samples can be found under the 'samples' folder. Hope you have fun watching them!
 
-The detailed report of this project can be found [here](Deep_Synthesis_Report.pdf)
+The detailed report of this project can be found [here](Deep_Synthesis_Report.pdf) or [here](https://drive.google.com/file/d/1_kATM4D9L5TJtkhbXtcbIqTFmlJYBUHR/view?usp=sharing)(with hyperrefs).
 
 ## Acknowledgement
 We express our deepest gratitude to Professor Chinmay Hedge and the TAs along with all contributors who offered their expertise and insights throughout the "Deep Synthesis" project. We acknowledge the assistance of OpenAI's language model, ChatGPT 4.0, for its role in generating parts of this report. Additionally, we are grateful for the extensive resources available through online platforms such as Stack Overflow and various GitHub repositories. Our project has also benefited greatly from the official documentation of PyTorch, NumPy, and seaborn, which guided our development decisions. Moreover, we thank the NYU High Performance Computing (HPC) facilities for the computational resources that were essential for training our models. These tools and supports were instrumental in the successful completion of our research.
