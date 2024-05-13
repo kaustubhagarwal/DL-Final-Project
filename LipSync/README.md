@@ -24,9 +24,13 @@ Else you can run
 ```bash
 python color_syncnet_train_plots.ipynb
 ```
+Upon training we received the following graph
+!["Loss color_sync"](color_sync.png)
+
 ##### Training the Wav2Lip models
 You can either train the model without the additional visual quality disriminator (< 1 day of training) or use the discriminator (~2 days). For the former, run: 
 ```bash
 python wav2lip_train_plots.ipynb
 ```
-
+Upon training we received the following graph
+!["Loss color_sync"](wav_img.png)
