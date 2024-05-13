@@ -86,6 +86,6 @@ Inferencing can be done by running demo_cli.py and passing the following paramet
 
 Here is an audio sample.
 
-[Listen to the Audio](relative/path/to/your/audio.wav)
+[Listen to the Audio](audio_sample.wav)
 
 Other samples and complete results can be found on the repository's directory under the name samples.
