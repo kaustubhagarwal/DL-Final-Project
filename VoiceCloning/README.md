@@ -38,6 +38,7 @@ vis_every (optional): This argument (type int) controls how often (number of ste
 - no_visdom (optional): This argument is a flag (type bool). When set to True, it disables using Visdom for visualization altogether.
 
 Our training for 100 epochs gave us the following result
+
 ![Encoder similarity](Encoder.png)
 
 #### ii) Vocoder
