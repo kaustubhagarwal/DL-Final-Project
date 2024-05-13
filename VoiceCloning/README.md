@@ -1,4 +1,4 @@
-# Voice Cloning Module
+# **Voice Cloning Module**
 We have created code for this voice cloning module based on the paper [Transfer Learning from Speaker Verification to
 Multispeaker Text-To-Speech Synthesis](https://arxiv.org/pdf/1806.04558.pdf) (SV2TTS).
 
