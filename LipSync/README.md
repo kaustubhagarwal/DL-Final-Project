@@ -1,8 +1,6 @@
 # **Lip Syncing Module**
 
-This code is part of the paper: _A Lip Sync Expert Is All You Need for Speech to Lip Generation In the Wild_ published at ACM Multimedia 2020. 
-
-[Paper](http://arxiv.org/abs/2008.10010)
+This code is inspired by the work of [A Lip Sync Expert Is All You Need for Speech to Lip Generation In the Wild](http://arxiv.org/abs/2008.10010)
 
 ## Prerequisites
 Install necessary packages using `pip install -r requirements.txt`.
