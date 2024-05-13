@@ -9,9 +9,9 @@ This is the final project for the course ECE-GY 7123: Deep Learning by Professor
 
 This repository contains the code for Deep Synthesis, a system that generates real-time audio-visual speech synthesis. It works by taking three inputs:
 
-Text: The text that you want the person in the image or video to say.
-Voice sample: A short audio clip of the target speaker's voice. This is used to capture the speaker's unique vocal characteristics, such as pitch, timbre, and accent.
-Image or video: An image or video of the person you want to synthesize speech for. Deep Synthesis will use this image or video to create a new video where the person appears to be speaking the text with synchronized lip movements.
+- **Text:** The text that you want the person in the image or video to say.
+- **Voice sample:** A short audio clip of the target speaker's voice. This is used to capture the speaker's unique vocal characteristics, such as pitch, timbre, and accent.
+- **Image or video:** An image or video of the person you want to synthesize speech for. Deep Synthesis will use this image or video to create a new video where the person appears to be speaking the text with synchronized lip movements.
 The system works by first using a text-to-speech (TTS) model to generate a speech waveform based on the input text and the voice sample. Then, a lip synchronization model is used to generate realistic lip movements for the person in the image or video that are synchronized with the speech waveform. Finally, the generated speech waveform and lip movements are combined to create a new video.
 
 ## Generating Samples
