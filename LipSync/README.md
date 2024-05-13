@@ -19,9 +19,10 @@ The result is saved (by default) in `../result.mp4`. You can specify it as an ar
 There are two major steps: (i) Train the expert lip-sync discriminator, (ii) Train the Wav2Lip model(s).
 
 ##### Training the expert discriminator
-You can download [the pre-trained weights](#getting-the-weights) if you want to skip this step. To train it:
+You can download [the pre-trained weights](https://drive.google.com/drive/folders/1uN6hci10QlIZb7pg1D5MVaMY6Dgrnsp5?usp=share_link) if you want to skip this step.
+Else you can run
 ```bash
-python color_syncnet_train.py --data_root lrs2_preprocessed/ --checkpoint_dir <folder_to_save_checkpoints>
+python color_syncnet_train_plots.py
 ```
 ##### Training the Wav2Lip models
 You can either train the model without the additional visual quality disriminator (< 1 day of training) or use the discriminator (~2 days). For the former, run: 
