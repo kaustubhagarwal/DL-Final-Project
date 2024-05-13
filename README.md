@@ -1,5 +1,12 @@
 # Deep Synthesis: Real-time Audio-Visual Synthesis Using Deep Learning
 
+This is the final project for the course ECE-GY 7123: Deep Learning by Professor Chinmay Hedge.
+
+## Team members
+- Kaustubh Agarwal (ka3210)
+- Srujana Kanchisamudram (sk11115)
+- Aashir Saroya (as17888)
+
 This repository contains the code for Deep Synthesis, a system that generates real-time audio-visual speech synthesis. It works by taking three inputs:
 
 Text: The text that you want the person in the image or video to say.
@@ -23,12 +30,9 @@ Following this you'll have to run the next 2 segments of code to generate the au
 
 Finally, you'll be able to see the generated video on the Colab Notebook. It can also be found in the temporary files on Colab with the name 'result.mp4' which can be downloaded and used as you'd like!
 
-This is the final project for the course ECE-GY 7123: Deep Learning by Professor Chinmay Hedge.
+You can find more details about each of the modules, their working and some plots in thier respective READMEs.
 
-## Team members
-- Kaustubh Agarwal (ka3210)
-- Srujana Kanchisamudram (sk11115)
-- Aashir Saroya (as17888)
+We have generated some samples to show the performance of our model. These samples can be found under the 'samples' folder. Hope you have fun watching them!
 
 ## Acknowledgement
 We express our deepest gratitude to Professor Chinmay Hedge and the TAs along with all contributors who offered their expertise and insights throughout the "Deep Synthesis" project. We acknowledge the assistance of OpenAI's language model, ChatGPT 4.0, for its role in generating parts of this report. Additionally, we are grateful for the extensive resources available through online platforms such as Stack Overflow and various GitHub repositories. Our project has also benefited greatly from the official documentation of PyTorch, NumPy, and seaborn, which guided our development decisions. Moreover, we thank the NYU High Performance Computing (HPC) facilities for the computational resources that were essential for training our models. These tools and supports were instrumental in the successful completion of our research.
