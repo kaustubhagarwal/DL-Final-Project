@@ -29,3 +29,6 @@ This is the final project for the course ECE-GY 7123: Deep Learning by Professor
 - Kaustubh Agarwal (ka3210)
 - Srujana Kanchisamudram (sk11115)
 - Aashir Saroya (as17888)
+
+## Acknowledgement
+We express our deepest gratitude to Professor Chinmay Hedge and the TAs along with all contributors who offered their expertise and insights throughout the "Deep Synthesis" project. We acknowledge the assistance of OpenAI's language model, ChatGPT 4.0, for its role in generating parts of this report. Additionally, we are grateful for the extensive resources available through online platforms such as Stack Overflow and various GitHub repositories. Our project has also benefited greatly from the official documentation of PyTorch, NumPy, and seaborn, which guided our development decisions. Moreover, we thank the NYU High Performance Computing (HPC) facilities for the computational resources that were essential for training our models. These tools and supports were instrumental in the successful completion of our research.
