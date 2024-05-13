@@ -83,3 +83,9 @@ Inferencing can be done by running demo_cli.py and passing the following paramet
 - no_sound (optional): This argument is a flag (type bool). When set to True, it prevents the script from playing the generated audio after processing.
 - seed (optional): This argument (type int) allows specifying an optional random seed value. Setting a seed makes the script's behavior deterministic (same results for the same inputs), which can be helpful for debugging or reproducibility.
 - text (optional): This argument (type str) provides the text to be processed by the models. By default, it's set to "This is a deep learning sample".
+
+Here is an audio sample.
+
+[Listen to the Audio](relative/path/to/your/audio.wav)
+
+Other samples and complete results can be found on the repository's directory under the name samples.
