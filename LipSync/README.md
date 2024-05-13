@@ -5,63 +5,17 @@ This code is part of the paper: _A Lip Sync Expert Is All You Need for Speech to
 [Paper](http://arxiv.org/abs/2008.10010)
 
 ## Prerequisites
-Install necessary packages using `pip install -r requirements.txt`. 
+Install necessary packages using `pip install -r requirements.txt`.
 
-Getting the weights
-----------
-| Model  | Description |  Link to the model | 
-| :-------------: | :---------------: | :---------------: |
-| Wav2Lip  | Highly accurate lip-sync | [Link](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/Eb3LEzbfuKlJiR600lQWRxgBIY27JZg80f7V9jtMfbNDaQ?e=TBFBVW)  |
-| Wav2Lip + GAN  | Slightly inferior lip-sync, but better visual quality | [Link](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/EdjI7bZlgApMqsVoEUUXpLsBxqXbn5z8VTmoxp55YNDcIA?e=n9ljGW) |
-| Expert Discriminator  | Weights of the expert discriminator | [Link](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/EQRvmiZg-HRAjvI6zqN9eTEBP74KefynCwPWVmF57l-AYA?e=ZRPHKP) |
-| Visual Quality Discriminator  | Weights of the visual disc trained in a GAN setup | [Link](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/EQVqH88dTm1HjlK11eNba5gBbn15WMS0B0EZbDBttqrqkg?e=ic0ljo) |
+## Lip-syncing videos using the pre-trained models (Inference)
 
-Lip-syncing videos using the pre-trained models (Inference)
--------
-You can lip-sync any video to any audio:
 ```bash
 python inference.py --checkpoint_path <ckpt> --face <video.mp4> --audio <an-audio-source> 
 ```
-The result is saved (by default) in `results/result_voice.mp4`. You can specify it as an argument,  similar to several other available options. The audio source can be any file supported by `FFMPEG` containing audio data: `*.wav`, `*.mp3` or even a video file, from which the code will automatically extract the audio.
+The result is saved (by default) in `../result.mp4`. You can specify it as an argument,  similar to several other available options. The audio source can be any file supported by `FFMPEG` containing audio data: `*.wav`, `*.mp3` or even a video file, from which the code will automatically extract the audio.
 
-##### Tips for better results:
-- Experiment with the `--pads` argument to adjust the detected face bounding box. Often leads to improved results. You might need to increase the bottom padding to include the chin region. E.g. `--pads 0 20 0 0`.
-- If you see the mouth position dislocated or some weird artifacts such as two mouths, then it can be because of over-smoothing the face detections. Use the `--nosmooth` argument and give another try. 
-- Experiment with the `--resize_factor` argument, to get a lower resolution video. Why? The models are trained on faces which were at a lower resolution. You might get better, visually pleasing results for 720p videos than for 1080p videos (in many cases, the latter works well too). 
-- The Wav2Lip model without GAN usually needs more experimenting with the above two to get the most ideal results, and sometimes, can give you a better result as well.
+## Training
 
-Preparing LRS2 for training
-----------
-Our models are trained on LRS2. See [here](#training-on-datasets-other-than-lrs2) for a few suggestions regarding training on other datasets.
-##### LRS2 dataset folder structure
-
-```
-data_root (mvlrs_v1)
-├── main, pretrain (we use only main folder in this work)
-|	├── list of folders
-|	│   ├── five-digit numbered video IDs ending with (.mp4)
-```
-
-Place the LRS2 filelists (train, val, test) `.txt` files in the `filelists/` folder.
-
-##### Preprocess the dataset for fast training
-
-```bash
-python preprocess.py --data_root data_root/main --preprocessed_root lrs2_preprocessed/
-```
-Additional options like `batch_size` and number of GPUs to use in parallel to use can also be set.
-
-##### Preprocessed LRS2 folder structure
-```
-preprocessed_root (lrs2_preprocessed)
-├── list of folders
-|	├── Folders with five-digit numbered video IDs
-|	│   ├── *.jpg
-|	│   ├── audio.wav
-```
-
-Train!
-----------
 There are two major steps: (i) Train the expert lip-sync discriminator, (ii) Train the Wav2Lip model(s).
 
 ##### Training the expert discriminator
