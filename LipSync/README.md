@@ -25,6 +25,7 @@ Else you can run
 python color_syncnet_train_plots.ipynb
 ```
 Upon training we received the following graph
+
 !["Loss color_sync"](color_sync.png)
 
 ##### Training the Wav2Lip models
@@ -33,4 +34,5 @@ You can either train the model without the additional visual quality disriminato
 python wav2lip_train_plots.ipynb
 ```
 Upon training we received the following graph
+
 !["Loss color_sync"](wav_img.png)
