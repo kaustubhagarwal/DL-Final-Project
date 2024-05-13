@@ -16,7 +16,9 @@ This repository contains the code for Deep Synthesis, a system that generates re
 The system works by first using a text-to-speech (TTS) model to generate a speech waveform based on the input text and the voice sample. Then, a lip synchronization model is used to generate realistic lip movements for the person in the image or video that are synchronized with the speech waveform. Finally, the generated speech waveform and lip movements are combined to create a new video.
 
 ## Generating Samples
-To generate samples run the interactive Python notebook Sample_Generator.ipynb or just run this Colab Notebook. It is a relatively straightforward inferencing file.
+To generate samples run the interactive Python notebook Sample_Generator.ipynb or just run this [Colab Notebook](https://colab.research.google.com/drive/1r1KTBPVwd0_JNWwyb3-6a5wi6FjmGHii?usp=sharing). 
+
+It is a relatively straightforward inferencing file.
 Run the first few sections to get the models and necessary libraries.
 
 Following that you can give the 3 inputs described above. Due to limited time and scope, we were not able to develop a webpage to interactively upload these inputs (something which we would've really liked to do) but we were able to give very clear directions to do so.
