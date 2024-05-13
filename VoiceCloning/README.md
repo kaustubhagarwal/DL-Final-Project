@@ -37,6 +37,9 @@ vis_every (optional): This argument (type int) controls how often (number of ste
 - visdom_server (optional): This argument (type str) allows specifying the address of a visualization server (likely Visdom) used for plotting training progress. The default value is "http://localhost".
 - no_visdom (optional): This argument is a flag (type bool). When set to True, it disables using Visdom for visualization altogether.
 
+Our training for 100 epochs gave us the following result
+![Encoder similarity](Encoder.png)
+
 #### ii) Vocoder
 You can run vocoder_train.py with the following parameters
 - run_id (required): This is a string argument that the user must provide. It specifies a name for the current training run. This name is used for several purposes, similar to the previous snippet:
