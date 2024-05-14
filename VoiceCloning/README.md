@@ -4,7 +4,7 @@ Multispeaker Text-To-Speech Synthesis](https://arxiv.org/pdf/1806.04558.pdf) (SV
 
 The deep learning framework proposed in the paper consists of three stages. In the first stage, one creates a digital representation of a voice from a few seconds of audio. In the second and third stages, this representation is used as reference to generate speech given arbitrary text.
 
-The model architecture for this voice cloning module is as follows (based on the work done by [Jia et al., 2019]((https://arxiv.org/pdf/1806.04558.pdf)))
+The model architecture for this voice cloning module is as follows based on the work by [Jia et al., 2019]((https://arxiv.org/pdf/1806.04558.pdf))
 ![Model Architecture](Model_architecture.jpeg)
 
 
