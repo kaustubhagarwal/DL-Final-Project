@@ -4,6 +4,9 @@ This code is inspired by the work of [A Lip Sync Expert Is All You Need for Spee
 
 The key to this module's success is that it learns from a powerful "lip-sync discriminator" that can tell how good a lip sync is. This discriminator helps the generator model avoid the mistakes of previous methods, which had trouble with lip syncing on unseen people or moving videos.
 
+The architecture of this module is as follows [Prajwal et al., 2020](http://arxiv.org/abs/2008.10010)
+!["Model Architecture"](Lip_Sync_Architecture.png)
+
 ## Prerequisites
 Install necessary packages using `pip install -r requirements.txt`.
 
