@@ -15,6 +15,10 @@ This repository contains the code for Deep Synthesis, a system that generates re
 
 The system works by first using a text-to-speech (TTS) model to generate a speech waveform based on the input text and the voice sample. Then, a lip synchronization model is used to generate realistic lip movements for the person in the image or video that are synchronized with the speech waveform. Finally, the generated speech waveform and lip movements are combined to create a new video.
 
+The complete flow diagram of the project is as follows 
+
+![Project Flow](Complete_Flow_Diagram.png)
+
 ## Generating Samples
 To generate samples run the interactive Python notebook Sample_Generator.ipynb or just run this [Colab Notebook](https://colab.research.google.com/drive/1r1KTBPVwd0_JNWwyb3-6a5wi6FjmGHii?usp=sharing). 
 
@@ -37,7 +41,7 @@ You can find more details about each of the modules, their working and some plot
 
 We have generated some samples to show the performance of our model. These samples can be found under the 'samples' folder. Hope you have fun watching them!
 
-The detailed report of this project can be found [here](Deep_Synthesis_Report.pdf) or [here](https://drive.google.com/file/d/1_kATM4D9L5TJtkhbXtcbIqTFmlJYBUHR/view?usp=sharing)(with hyperrefs).
+The detailed report of this project can be found [here](Deep_Synthesis_Report.pdf) or [here](https://drive.google.com/file/d/1_kATM4D9L5TJtkhbXtcbIqTFmlJYBUHR/view?usp=sharing) (with hyperrefs).
 
 ## Acknowledgement
 We express our deepest gratitude to Professor Chinmay Hedge and the TAs along with all contributors who offered their expertise and insights throughout the "Deep Synthesis" project. We acknowledge the assistance of OpenAI's language model, ChatGPT 4.0, for its role in generating parts of this report. Additionally, we are grateful for the extensive resources available through online platforms such as Stack Overflow and various GitHub repositories. Our project has also benefited greatly from the official documentation of PyTorch, NumPy, and seaborn, which guided our development decisions. Moreover, we thank the NYU High Performance Computing (HPC) facilities for the computational resources that were essential for training our models. These tools and supports were instrumental in the successful completion of our research.
